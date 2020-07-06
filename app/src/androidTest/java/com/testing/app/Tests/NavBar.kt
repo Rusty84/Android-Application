@@ -33,6 +33,8 @@ class NavBar : UiTest() {
         Text("This is the home screen")
     }
 
+    HFHFHF
+
     private fun Text(screenText: String) {
         screenText.waitForDisplay().isDisplayed()
 
