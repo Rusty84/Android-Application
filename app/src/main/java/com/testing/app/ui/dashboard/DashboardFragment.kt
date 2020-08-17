@@ -1,31 +1,37 @@
 package com.testing.app.ui.dashboard
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
+import androidx.annotation.LayoutRes
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.fragment.app.add
 import com.testing.app.R
 
-class DashboardFragment : Fragment() {
+abstract class DashboardFragment : AppCompatActivity() {
 
-    private lateinit var dashboardViewModel: DashboardViewModel
+    private val layoutResId: Int
+        @LayoutRes
+        get() = R.layout.fragment_dashboard
 
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-        dashboardViewModel =
-                ViewModelProviders.of(this).get(DashboardViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
-        val textView: TextView = root.findViewById(R.id.text_dashboard)
-        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
-        return root
+    protected abstract fun createFragment(): Fragment
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        setContentView(layoutResId)
+
+        val fm = supportFragmentManager
+        var fragment = fm.findFragmentById(R.id.fragment_container)
+
+        // ensures fragments already created will not be created
+        if (fragment == null) {
+            fragment = createFragment()
+            // create and commit a fragment transaction
+            fm.beginTransaction()
+                .add(R.id.fragment_container, fragment)
+                .commit()
+        }
+
+
     }
 }
