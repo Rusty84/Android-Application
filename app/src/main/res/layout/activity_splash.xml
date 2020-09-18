@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!-- This a "Splash Screen" XML file, here all the text view, Image view are laid in a linearly fashion inside the Linear layout. The reason of linear layout is for accurately placing the logo and the progress bar without happen to use the constraints -->
+<?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -12,7 +12,7 @@ android:orientation="vertical">
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="250dp"
-    android:src="@drawable/ic_launcher_foreground"
+    android:src="@mipmap/ic_launcher_new"
     app:srcCompat="@android:drawable/sym_def_app_icon" />
 
 <TextView

@@ -1,13 +1,11 @@
 package com.testing.app.Tests
 
-import android.widget.TextView
-import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import com.testing.app.R
-import com.testing.app.Util.*
-import org.hamcrest.CoreMatchers.allOf
-import org.hamcrest.CoreMatchers.instanceOf
+import com.testing.app.Util.UiTest
+import com.testing.app.Util.click
+import com.testing.app.Util.isDisplayed
+import com.testing.app.Util.waitForDisplay
 import org.junit.Test
 import org.junit.runner.RunWith
 
