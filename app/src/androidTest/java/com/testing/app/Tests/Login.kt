@@ -27,7 +27,26 @@ class Login : UiTest() {
     var mActivityRule: ActivityTestRule<LoginActivity> = ActivityTestRule(LoginActivity::class.java)
 
     @Test
+    fun testNoDetails() {
+        R.id.login_button.isDisplayed().click()
+    }
+
+    @Test
+    fun testUsernameOnly() {
+        onView(withId(R.id.username_field)).perform(typeText("User"), closeSoftKeyboard())
+        R.id.login_button.isDisplayed().click()
+
+    }
+
+    @Test
+    fun testPasswordOnly() {
+        onView(withId(R.id.password_field)).perform(typeText("User"), closeSoftKeyboard())
+        R.id.login_button.isDisplayed().click()
+    }
+
+    @Test
     fun testLogin() {
+        R.id.username_field.isDisplayed()
         R.id.password_field.isDisplayed()
         onView(withId(R.id.username_field)).perform(typeText("User"), closeSoftKeyboard())
         onView(withId(R.id.password_field)).perform(typeText("Password"), closeSoftKeyboard())
