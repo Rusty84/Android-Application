@@ -46,6 +46,7 @@ class Login : UiTest() {
 
     @Test
     fun testLogin() {
+        text("Testing Application Login")
         R.id.username_field.isDisplayed()
         R.id.password_field.isDisplayed()
         onView(withId(R.id.username_field)).perform(typeText("User"), closeSoftKeyboard())
