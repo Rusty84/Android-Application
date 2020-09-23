@@ -29,8 +29,10 @@ class Login : UiTest() {
     @Test
     fun testLogin() {
         R.id.password_field.isDisplayed()
-        onView(withId(R.id.username_field)).perform(typeText("Password"), closeSoftKeyboard())
+        onView(withId(R.id.username_field)).perform(typeText("User"), closeSoftKeyboard())
+        onView(withId(R.id.password_field)).perform(typeText("Password"), closeSoftKeyboard())
         R.id.login_button.isDisplayed().click()
+        R.id.navigation_home.isDisplayed()
 
     }
 
