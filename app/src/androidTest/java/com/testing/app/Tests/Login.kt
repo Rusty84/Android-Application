@@ -40,8 +40,17 @@ class Login : UiTest() {
 
     @Test
     fun testPasswordOnly() {
-        onView(withId(R.id.password_field)).perform(typeText("User"), closeSoftKeyboard())
+        onView(withId(R.id.password_field)).perform(typeText("fgdhjfdhj"), closeSoftKeyboard())
         R.id.login_button.isDisplayed().click()
+    }
+
+    @Test
+    fun testWrongUserAndPassword() {
+
+        onView(withId(R.id.username_field)).perform(typeText("Simon"), closeSoftKeyboard())
+        onView(withId(R.id.password_field)).perform(typeText("dskjgdlgjkl"), closeSoftKeyboard())
+        R.id.login_button.isDisplayed().click()
+
     }
 
     @Test
