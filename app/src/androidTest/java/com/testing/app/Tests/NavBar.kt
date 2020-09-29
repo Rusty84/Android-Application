@@ -2,7 +2,7 @@ package com.testing.app.Tests
 
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import androidx.test.rule.ActivityTestRule
-import com.testing.app.MainActivity
+import com.testing.app.activities.MainActivity
 import com.testing.app.R
 import com.testing.app.Util.UiTest
 import com.testing.app.Util.click
@@ -18,7 +18,8 @@ import org.junit.runner.RunWith
 class NavBar : UiTest() {
 
     @get:Rule
-    var mActivityRule: ActivityTestRule<MainActivity> = ActivityTestRule(MainActivity::class.java)
+    var mActivityRule: ActivityTestRule<MainActivity> = ActivityTestRule(
+        MainActivity::class.java)
 
     @Test
     fun testNavbarDisplay() {

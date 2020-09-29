@@ -7,10 +7,9 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.filters.LargeTest
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import androidx.test.rule.ActivityTestRule
-import com.testing.app.LoginActivity
+import com.testing.app.activities.LoginActivity
 import com.testing.app.R
 import com.testing.app.Util.UiTest
-import com.testing.app.Util.click
 import com.testing.app.Util.isDisplayed
 import com.testing.app.Util.waitForDisplay
 import org.junit.Rule
@@ -24,7 +23,8 @@ import org.junit.runner.RunWith
 class Login : UiTest() {
 
     @get:Rule
-    var mActivityRule: ActivityTestRule<LoginActivity> = ActivityTestRule(LoginActivity::class.java)
+    var mActivityRule: ActivityTestRule<LoginActivity> = ActivityTestRule(
+        LoginActivity::class.java)
 
     @Test
     fun testNoDetails() {
