@@ -21,4 +21,7 @@ jobs:
       uses: ReactiveCircus/android-emulator-runner@v2.13.0
       with:
         api-level: 28
+        target: default
+        arch: x86_64
+        profile: Nexus 6
         script: ./gradlew connectedEspressoAndroidTest
