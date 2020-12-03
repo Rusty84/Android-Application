@@ -23,5 +23,4 @@ jobs:
         api-level: 28
         target: default
         arch: x86_64
-    - name: Tests
-      run: ./gradlew :app:connectedEspressoAndroidTest
+        script: ./gradlew :app:connectedEspressoAndroidTest
