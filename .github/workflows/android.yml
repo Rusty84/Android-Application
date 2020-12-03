@@ -12,4 +12,4 @@ jobs:
       with:
         java-version: 1.8
     - name: Tests
-      run: ./gradlew connectedEspressoAndroidTest
+      run: ./gradlew :app:connectedEspressoAndroidTest
