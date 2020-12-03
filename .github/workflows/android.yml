@@ -1,26 +1,15 @@
 name: Android CI
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: [push]
 
 jobs:
   build:
-
-    runs-on: macos-latest
-
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: set up JDK 1.8
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: Run Espresso Tests
-      uses: ReactiveCircus/android-emulator-runner@v2.13.0
-      with:
-        api-level: 28
-        target: default
-        arch: x86_64
-        script: ./gradlew connectedEspressoAndroidTest
+    - name: Tests
+      run: ./gradlew connectedEspressoAndroidTest
