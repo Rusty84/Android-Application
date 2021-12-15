@@ -10,6 +10,7 @@ import androidx.test.rule.ActivityTestRule
 import com.testing.app.activities.LoginActivity
 import com.testing.app.R
 import com.testing.app.Util.UiTest
+import com.testing.app.Util.click
 import com.testing.app.Util.isDisplayed
 import com.testing.app.Util.waitForDisplay
 import org.junit.Rule
