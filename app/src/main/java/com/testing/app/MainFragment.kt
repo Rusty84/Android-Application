@@ -13,7 +13,8 @@ data class Movie(val title: String, val year: Int)
 class MainFragment : Fragment() {
 
     private val movies = listOf(
-        Movie("Killers of the Flower Moon", 2021),
+        Movie("Killers of the Flower Moon", 2022),
+        Movie("Don't Look Up", 2021),
         Movie("Once Upon a Time... In Hollywood", 2019),
         Movie("The Revenant", 2015),
         Movie("The Wolf of Wall Street", 2013),
