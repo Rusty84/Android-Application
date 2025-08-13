@@ -8,7 +8,7 @@ on:
 
 jobs:
   espresso-tests:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
       - name: Checkout
@@ -27,4 +27,4 @@ jobs:
           api-level: 31
           target: google_apis
           arch: x86_64
-          script: ./gradlew connectedEspressoAndroidTest
+          script: ./gradlew connectedAndroidTest
